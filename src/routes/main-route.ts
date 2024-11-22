@@ -32,9 +32,9 @@ mainRouter.get("/operar_multiplica", (req, res) => {
     return res.send(`El resultado de la operacion multiplica es: ${resultado}`);
 });
 
-mainRouter.get("/operar_resta", (req, res) => {
+mainRouter.get("/operar_dividir", (req, res) => {
     const { operacion, num1, num2 } = req.query as { operacion: string, num1: string, num2: string };
-    let resultado = operar(operacion, -num1, -num2);
+    let resultado = operar(operacion, /num1, /num2);
     return res.send(`El resultado de la operacion resta es: ${resultado}`);
 });
 
