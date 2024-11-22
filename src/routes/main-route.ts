@@ -14,28 +14,10 @@ mainRouter.get("/api-key", (_req, res) => {
     return res.send(`la apikey de mi aplicacion es: ${configuration.apikey}`);
 });
 
-mainRouter.get("/operar_suma", (req, res) => {
+mainRouter.get("/operar", (req, res) => {
     const { operacion, num1, num2 } = req.query as { operacion: string, num1: string, num2: string };
     let resultado = operar(operacion, +num1, +num2);
-    return res.send(`El resultado de la operacion suma es: ${resultado}`);
-});
-
-mainRouter.get("/operar_resta", (req, res) => {
-    const { operacion, num1, num2 } = req.query as { operacion: string, num1: string, num2: string };
-    let resultado = operar(operacion, -num1, -num2);
-    return res.send(`El resultado de la operacion resta es: ${resultado}`);
-});
-
-mainRouter.get("/operar_multiplica", (req, res) => {
-    const { operacion, num1, num2 } = req.query as { operacion: string, num1: string, num2: string };
-    let resultado = operar(operacion, *num1, *num2);
-    return res.send(`El resultado de la operacion multiplica es: ${resultado}`);
-});
-
-mainRouter.get("/operar_dividir", (req, res) => {
-    const { operacion, num1, num2 } = req.query as { operacion: string, num1: string, num2: string };
-    let resultado = operar(operacion, /num1, /num2);
-    return res.send(`El resultado de la operacion resta es: ${resultado}`);
+    return res.send(`El resultado de la operacion es: ${resultado}`);
 });
 
 mainRouter.get("/palindromo", (req, res) => {
